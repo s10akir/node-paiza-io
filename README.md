@@ -1,10 +1,43 @@
-# npm-package
+# node-paiza-io
 
-typescript で型情報を含めた npm package を作るためのテンプレート
+paizaIO を JavaScript/TypeScript 開発で利用するためのライブラリ && CLI ツール
 
 ## usage
 
-1. `package.json`の`name`を一意な物に変える
-1. `package.json`の`version`を適切に変更する
-1. `yarn`
-1. `npm publish --access public` OR `npm pack`
+### typescript
+
+```bash
+$ yarn add @s10akir/node-paiza-io
+```
+
+```typescript
+import PaizaIO from '@s10akir/node-paiza-io';
+
+const paizaIO = new PaizaIO({
+  apiKey: process.env.PAIZA_IO_API_KEY || "guest",
+});
+
+const runner = await paizaIO.createRunner({
+  language: 'typescript',
+  sourceCode: 'console.log("Hello PaizaIO!");'
+});
+
+while (await runner.checkRunning()) {
+  // sleep 1000ms
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+}
+
+const details = await runner.getDetails();
+console.log(details.stdout.trim());
+```
+
+### CLI
+
+```bash
+$ npm i -g @s10akir/node-paiza-io
+```
+
+```bash
+$ paiza-io run typescript 'console.log("Hello PaizaIO!");'
+Hello PaizaIO!
+```
