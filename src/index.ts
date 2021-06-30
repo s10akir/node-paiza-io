@@ -25,9 +25,9 @@ export default class PaizaIO {
       language: args.language,
       input: args.input,
       longpoll: args.longpoll,
-      longpoll_timeout: args.lonpollTimeout
+      longpoll_timeout: args.lonpollTimeout,
     });
 
-    return new Runner({id: res.data.id, apiKey: this.apiKey});
+    return new Runner({ id: res.data.id, apiKey: this.apiKey });
   }
 }
