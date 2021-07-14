@@ -7,7 +7,7 @@
   <a href="https://github.com/s10akir/paiza-io-node/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/s10akir/paiza-io-node/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/s10akir/paiza-io-node/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/s10akir/@s10akir/node-paiza-io" />
   </a>
 </p>
@@ -100,4 +100,4 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## 📝 License
 
 Copyright © 2021 [Akira Shinohara <akira.shinohara@mojamoja.cloud>](https://github.com/s10akir).<br />
-This project is [MIT](https://github.com/s10akir/paiza-io-node/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/s10akir/paiza-io-node/blob/main/LICENSE) licensed.
