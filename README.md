@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> paizaIOをNode.jsプロジェクトから簡単に利用できるようにするAPIラッパーとそのCLIツール
+> paizaIO を Node.js プロジェクトから簡単に利用できるようにする API ラッパーとその CLI ツール
 
 ### 🏠 [Homepage](https://paiza.io)
 
@@ -39,11 +39,56 @@ $ npx @s10akir/node-paiza-io run typescript 'console.log("Hello PaizaIO!");'
 
 For more advanced usage, see `paiza-io --help`.
 
+### In Your Project
+
+```javascript
+const PaizaIO = require("@s10akir/node-paiza-io");
+
+const paizaIO = new PaizaIO({
+  apiKey: process.env.PAIZA_IO_API_KEY || "guest",
+});
+
+(async () => {
+  const runner = await paizaIO.createRunner({
+    language: "ruby",
+    sourceCode: "puts 'Hello PaizaIO!'",
+  });
+
+  while (await runner.checkRunning()) {
+    // sleep 1000ms
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
+  const details = await runner.getDetails();
+
+  // build error
+  if (details.buildResult && details.buildResult !== "success") {
+    console.error("[!] build error");
+
+    if (details.buildStdout)
+      console.error(`buildStdout: ${details.buildStdout.trim()}`);
+    if (details.buildStderr)
+      console.error(`buildStderr: ${details.buildStderr.trim()}`);
+    return;
+  }
+
+  // runtime error
+  if (details.result !== "success") {
+    console.error("[!] runtime error");
+    if (details.stdout) console.error(`stdout: ${details.stdout.trim()}`);
+    if (details.stderr) console.error(`stderr: ${details.stderr.trim()}`);
+    return;
+  }
+
+  console.log(details.stdout.trim());
+})();
+```
+
 ## Author
 
 👤 **Akira Shinohara <akira.shinohara@mojamoja.cloud>**
 
-* Github: [@s10akir](https://github.com/s10akir)
+- Github: [@s10akir](https://github.com/s10akir)
 
 ## 🤝 Contributing
 
@@ -53,4 +98,3 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Copyright © 2021 [Akira Shinohara <akira.shinohara@mojamoja.cloud>](https://github.com/s10akir).<br />
 This project is [MIT](https://github.com/s10akir/paiza-io-node/blob/master/LICENSE) licensed.
-
