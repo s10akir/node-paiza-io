@@ -1,8 +1,17 @@
 {
   "name": "@s10akir/node-paiza-io",
   "version": "1.0.0",
+  "description": "paizaIOをNode.jsプロジェクトから簡単に利用できるようにするAPIラッパーとそのCLIツール",
+  "homepage": "https://paiza.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s10akir/paiza-io-node"
+  },
   "author": "Akira Shinohara <akira.shinohara@mojamoja.cloud>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s10akir/paiza-io-node/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
