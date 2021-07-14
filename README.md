@@ -20,7 +20,7 @@
 
 ```sh
 # Install
-$ npm install -g s10akir/node-paiza-io
+$ npm install -g @s10akir/node-paiza-io
 ```
 
 ## Getting Started
@@ -40,7 +40,7 @@ For more advanced usage, see `paiza-io --help`.
 ### In Your Project
 
 ```
-npm install --save-dev s10akir/node-paiza-io
+npm install --save-dev @s10akir/node-paiza-io
 
 ```
 
