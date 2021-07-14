@@ -33,6 +33,26 @@ $ paiza-io languages`);
         }
 
         const details = await runner.getDetails();
+
+        // build error
+        if (details.buildResult && details.buildResult !== "success") {
+          console.error("[!] build error");
+
+          if (details.buildStdout)
+            console.error(`buildStdout: ${details.buildStdout.trim()}`);
+          if (details.buildStderr)
+            console.error(`buildStderr: ${details.buildStderr.trim()}`);
+          return;
+        }
+
+        // runtime error
+        if (details.result !== "success") {
+          console.error("[!] runtime error");
+          if (details.stdout) console.error(`stdout: ${details.stdout.trim()}`);
+          if (details.stderr) console.error(`stderr: ${details.stderr.trim()}`);
+          return;
+        }
+
         console.log(details.stdout.trim());
       });
 
