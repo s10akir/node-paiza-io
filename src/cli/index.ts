@@ -1,7 +1,7 @@
 import cac from "cac";
 
-import { LANGUAGES } from "./constants";
 import PaizaIO from "../index";
+import { LANGUAGES } from "./constants";
 import { Language } from "../types";
 
 export namespace CLI {
