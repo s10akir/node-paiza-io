@@ -11,24 +11,26 @@ $ yarn add @s10akir/node-paiza-io
 ```
 
 ```typescript
-import PaizaIO from '@s10akir/node-paiza-io';
+import PaizaIO from "@s10akir/node-paiza-io";
 
 const paizaIO = new PaizaIO({
   apiKey: process.env.PAIZA_IO_API_KEY || "guest",
 });
 
-const runner = await paizaIO.createRunner({
-  language: 'typescript',
-  sourceCode: 'console.log("Hello PaizaIO!");'
-});
+(async () => {
+  const runner = await paizaIO.createRunner({
+    language: "typescript",
+    sourceCode: 'console.log("Hello PaizaIO!");',
+  });
 
-while (await runner.checkRunning()) {
-  // sleep 1000ms
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-}
+  while (await runner.checkRunning()) {
+    // sleep 1000ms
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
 
-const details = await runner.getDetails();
-console.log(details.stdout.trim());
+  const details = await runner.getDetails();
+  console.log(details.stdout.trim());
+})();
 ```
 
 ### CLI
