@@ -4,7 +4,7 @@ import { BASE_URL } from "./constants";
 import { Language } from "./types";
 import { Runner } from "./lib/runner";
 
-export default class PaizaIO {
+class PaizaIO {
   apiKey: string;
 
   constructor(args: { apiKey: string }) {
@@ -31,3 +31,5 @@ export default class PaizaIO {
     return new Runner({ id: res.data.id, apiKey: this.apiKey });
   }
 }
+
+export = PaizaIO;
