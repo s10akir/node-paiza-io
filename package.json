@@ -19,7 +19,7 @@
     "fix:prettier": "prettier --write 'src/**/*'"
   },
   "bin": {
-    "paiza-io": "bin/index.js --"
+    "paiza-io": "bin/index.js"
   },
   "dependencies": {
     "@types/node": "^15.12.2",
