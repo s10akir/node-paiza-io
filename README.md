@@ -19,10 +19,8 @@
 ## Install
 
 ```sh
-# Coming Soon...
-
 # Install
-$ npm install -g @s10akir/node-paiza-io
+$ npm install -g s10akir/node-paiza-io
 ```
 
 ## Getting Started
@@ -40,6 +38,11 @@ $ npx @s10akir/node-paiza-io run typescript 'console.log("Hello PaizaIO!");'
 For more advanced usage, see `paiza-io --help`.
 
 ### In Your Project
+
+```
+npm install --save-dev s10akir/node-paiza-io
+
+```
 
 ```javascript
 const PaizaIO = require("@s10akir/node-paiza-io");
