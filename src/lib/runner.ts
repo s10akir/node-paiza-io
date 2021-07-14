@@ -55,5 +55,3 @@ export class Runner {
     };
   }
 }
-
-export default Runner;

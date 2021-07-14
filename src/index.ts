@@ -1,3 +1,3 @@
-import PaizaIO from "./lib/paizaIO";
+import { PaizaIO } from "./lib/paizaIO";
 
 export = PaizaIO;
