@@ -14,7 +14,7 @@
 
 > paizaIO を Node.js プロジェクトから簡単に利用できるようにする API ラッパーとその CLI ツール
 
-### 🏠 [Homepage](https://paiza.io)
+### 🏠 [paizaIO](https://paiza.io)
 
 ## Install
 
