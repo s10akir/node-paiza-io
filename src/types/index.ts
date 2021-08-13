@@ -57,5 +57,5 @@ export type RunnerDetail = {
   exitCode: number;
   time: number;
   memory: number;
-  result: "success" | "failure" | "error";
+  result: "success" | "failure" | "error" | "timeout";
 };
